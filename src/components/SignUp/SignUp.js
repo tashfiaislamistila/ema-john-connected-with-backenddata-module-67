@@ -9,6 +9,7 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth)
 
     const handleEmailBlur = event => {
@@ -20,6 +21,7 @@ const SignUp = () => {
     const handleConfirmPasswordBlur = event => {
         setConfirmPassword(event.target.value)
     }
+
     if (user) {
         navigate('/shop');
     }
