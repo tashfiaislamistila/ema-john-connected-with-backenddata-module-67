@@ -1,4 +1,3 @@
-import { sendSignInLinkToEmail } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -7,17 +6,17 @@ const Shipment = () => {
     const [user] = useAuthState(auth);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [address, setAdderss] = useState('');
+    const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
     const [error, setError] = useState('');
     // const navigate = useNavigate();
 
     const handleNameBlur = event => {
-        setName(event.target.value)
+        setName(event.target.value);
     }
 
     const handleAddressBlur = event => {
-        setAdderss(event.target.value);
+        setAddress(event.target.value);
     }
     const handlePhoneBlur = event => {
         setPhone(event.target.value)
@@ -38,7 +37,7 @@ const Shipment = () => {
                         <input onBlur={handleNameBlur} type="text" name="name" id="" required />
                     </div>
                     <div className='input-group'>
-                        <label htmlFor='email'>Email</label>
+                        <label htmlFor='email'>Your Email</label>
                         <input value={user?.email} readOnly type="email" name="email" id="" required />
                     </div>
                     <div className="input-group">
